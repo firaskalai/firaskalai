@@ -1,140 +1,713 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Professionnel - Firas Kalai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-dark: #1a2332;
+        --primary-accent: #2d5d7b;
+        --secondary-accent: #5a9fb8;
+        --text-light: #ffffff;
+        --text-dark: #2c3e50;
+        --bg-light: #f8f9fa;
+        --border-color: #e0e4e8;
+      }
 
-<head>
-	<meta charset="utf-8">
-	<title>CV de Sebastien Dupont</title>
-	<meta name="author" content="Jean Dupont">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
-</head>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<body>
-	
-    <!-- HEADER -->
-    <header>
-        <ul class="container">
-            <li>
-                <h1>
-                    <span id="prenom">Sebastien</span>
-                    <span id="nom">Dupont</span>
-                </h1>
-            </li>
-            <li>
-                <strong>Adresse</strong>
-                41 rue Emile Zola<br>13000 Marseille
-            </li>
-            <li>
-                <strong>Téléphone</strong>
-                06.50.50.50.50
-            </li>
-            <li>
-                <strong>Mail</strong>
-                monmail@mail.fr
-            </li>
-        </ul>
-    </header>
-    
-    <main class="container">
-        
-        <aside>
-        
-            <img src="photo.jpg" alt="Photo du cv"> 
-            
-            <article>
-                <h2>Compétences</h2> 
-                <p>
-                    Développeur web<br>
-                    Graphiste<br>
-                </p> 
-            </article>
-            
-            <article>
-                <h2>Langues</h2>
-                <p>
-                    Français<br>
-                    Anglais<br>
-                    Espagnol
-                </p>
-            </article>
-            
-            <article>
-                <h2>Centre d'intérêt</h2>
-                <p class="noBorder">
-                    Informatique<br>
-                    Sport<br>
-                    Nature<br>
-                    Animaux
-                </p>
-            </article>
-            
-        </aside>
-        
-        <section>
-            <div class="container">
-                <article>
-                    <h2>Présentation</h2>
-                    <p>Passionné par la création et l'innovation digitale, je suis un développeur web polyvalent. Je maîtrise les langages de programmation tels que HTML, CSS, JavaScript et PHP. Je suis constamment à l'affût des dernières tendances technologiques pour fournir des solutions web efficaces et innovantes. Fort de mes compétences en développement web, je suis capable de concevoir et de mettre en œuvre des sites web interactifs, intuitifs et performants, tout en respectant les normes de sécurité et les bonnes pratiques de développement. Dynamique, autonome et doté d'un esprit d'équipe, je suis prêt à relever de nouveaux défis et à contribuer au succès de projets ambitieux.</p>
-                </article>
-                <article>
-                    <h2>Formations et diplomes</h2>
-                    <ul>
-                        <li class="exp">
-                            <span class="periode">2017 - 2018</span>
-                            <span class="desc">Certification Développeur Web Full Stack, OpenClassrooms</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2015 - 2017</span>
-                            <span class="desc">Master en Informatique. Université Pierre et Marie Curie, Paris</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2012 - 2015</span>
-                            <span class="desc">Licence en Informatique. Université C.Bernard Lyon 1</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2010 - 2012</span>
-                            <span class="desc">DUT Informatique. IUT de Lille, Lille</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2007 - 2010</span>
-                            <span class="desc">Baccalauréat Scientifique</span>
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <h2>Expérience</h2>
-                    <ul class="top10">
-                        <li class="exp">
-                            <span class="periode">2016 - 2024</span>
-                            <span class="desc"><strong>Développeur Web Senior</strong><br>Tech Solutions Inc., Paris</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2013 - 2016</span>
-                            <span class="desc"><strong>Développeur Front-End</strong><br>Creative Web Agency, Paris</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2010 - 2013</span>
-                            <span class="desc"><strong>Développeur Web Junior</strong><br>Digital Factory, Lille</span>
-                        </li>
-                        <li class="exp">
-                            <span class="periode">2009 - 2010</span>
-                            <span class="desc"><strong>Stagiaire Développeur Web</strong><br>StartUp Innov, Nantes</span>
-                        </li>
-                    </ul>
-                </article>
+      body {
+        font-family: "Source Sans 3", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px 20px;
+        min-height: 100vh;
+      }
+
+      .download-buttons {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        display: flex;
+        gap: 15px;
+        z-index: 1000;
+      }
+
+      .download-button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Source Sans 3", sans-serif;
+      }
+
+      .download-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+      }
+
+      .download-button:active {
+        transform: translateY(-1px);
+      }
+
+      .download-button::before {
+        content: "📄";
+        font-size: 20px;
+      }
+
+      .cv-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        animation: slideIn 0.8s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* LEFT SIDEBAR */
+      .sidebar {
+        background: linear-gradient(
+          180deg,
+          var(--primary-dark) 0%,
+          #0f1419 100%
+        );
+        color: var(--text-light);
+        padding: 50px 35px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sidebar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary-accent), #667eea);
+      }
+
+      .profile-photo {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin: 0 auto 30px;
+        border: 5px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(
+          135deg,
+          var(--secondary-accent),
+          var(--primary-accent)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .sidebar h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+
+      .sidebar .job-title {
+        text-align: center;
+        font-size: 13px;
+        color: var(--secondary-accent);
+        margin-bottom: 35px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .sidebar-section {
+        margin-bottom: 35px;
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .sidebar-section h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+      }
+
+      .contact-item,
+      .info-item {
+        margin-bottom: 12px;
+        font-size: 13px;
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        word-break: break-word;
+      }
+
+      .contact-item::before,
+      .info-item::before {
+        content: "▸";
+        color: var(--secondary-accent);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .contact-item a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-item a:hover {
+        color: var(--secondary-accent);
+      }
+
+      .skill-bar {
+        margin-bottom: 18px;
+      }
+
+      .skill-name {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 400;
+      }
+
+      .skill-level {
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, var(--secondary-accent), #667eea);
+        border-radius: 10px;
+        transition: width 1.5s ease-out;
+        box-shadow: 0 0 10px rgba(90, 159, 184, 0.5);
+      }
+
+      .language-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .language-level {
+        color: var(--secondary-accent);
+        font-weight: 600;
+      }
+
+      /* RIGHT CONTENT */
+      .content {
+        padding: 50px 45px;
+        background: var(--bg-light);
+      }
+
+      .content-header {
+        margin-bottom: 40px;
+      }
+
+      .content-header h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .about-text {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #5a6c7d;
+        font-weight: 300;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        color: var(--primary-dark);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--primary-accent);
+        display: inline-block;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .experience-item,
+      .education-item {
+        margin-bottom: 30px;
+        padding-left: 25px;
+        border-left: 3px solid var(--secondary-accent);
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .experience-item:hover,
+      .education-item:hover {
+        transform: translateX(5px);
+      }
+
+      .experience-item::before,
+      .education-item::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 5px;
+        width: 11px;
+        height: 11px;
+        background: var(--secondary-accent);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px var(--bg-light);
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .item-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .item-date {
+        font-size: 13px;
+        color: white;
+        background: var(--primary-accent);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .item-subtitle {
+        font-size: 15px;
+        color: var(--secondary-accent);
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .item-description {
+        font-size: 14px;
+        color: #5a6c7d;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      .item-description ul {
+        margin-top: 8px;
+        padding-left: 20px;
+      }
+
+      .item-description li {
+        margin-bottom: 5px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .cv-container {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          padding: 40px 25px;
+        }
+
+        .content {
+          padding: 40px 25px;
+        }
+
+        .download-buttons {
+          top: 15px;
+          right: 15px;
+          flex-direction: column;
+        }
+
+        .download-button {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+
+        .download-button::before {
+          font-size: 16px;
+        }
+      }
+
+      /* PRINT STYLES FOR HIGH QUALITY PDF */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+
+        body {
+          background: white !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .cv-container {
+          box-shadow: none !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          display: grid !important;
+          grid-template-columns: 320px 1fr !important;
+          page-break-inside: avoid;
+        }
+
+        .download-buttons {
+          display: none !important;
+        }
+
+        .sidebar {
+          background: linear-gradient(
+            180deg,
+            #1a2332 0%,
+            #0f1419 100%
+          ) !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .profile-photo,
+        .skill-progress,
+        .item-date,
+        .sidebar::before {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Prevent page breaks */
+        .experience-item,
+        .education-item,
+        .sidebar-section {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="download-buttons">
+      <button class="download-button" onclick="printToPDF()">
+        Imprimer en PDF
+      </button>
+    </div>
+
+    <div class="cv-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="profile-photo">
+          <img
+            src="fk.jpeg"
+            alt="Firas Kalai"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+
+        <h1>FIRAS KALAI</h1>
+        <p class="job-title">Technicien Supérieur en Informatique</p>
+
+        <div class="sidebar-section">
+          <h3>Contact</h3>
+          <div class="contact-item">
+            <span>+216 92 782 193</span>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:fereskal123@gmail.com">fereskal123@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span>Ben Arous, Boumhal, Tunisie</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Compétences</h3>
+          <div class="skill-bar">
+            <div class="skill-name">HTML / CSS</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 100%"></div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <ul class="container">
-            <li></li>
-            <li>
-                <img src="logoface.png" alt="logo Facebook">
-                <a href="#">Sebastien Dupont</a>
-            </li>
-        </ul>
-    </footer>
-    
-</body>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">Java / JEE</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">C# / .NET</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">Python</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 82%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">Angular</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">Spring Boot</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 50%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-name">C</div>
+            <div class="skill-level">
+              <div class="skill-progress" style="width: 78%"></div>
+            </div>
+          </div>
+        </div>
 
+        <div class="sidebar-section">
+          <h3>Langues</h3>
+          <div class="language-item">
+            <span>Arabe</span>
+            <span class="language-level">Natif</span>
+          </div>
+          <div class="language-item">
+            <span>Français</span>
+            <span class="language-level">Courant</span>
+          </div>
+          <div class="language-item">
+            <span>Anglais</span>
+            <span class="language-level">Courant</span>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h3>Centres d'intérêt</h3>
+          <div class="info-item">Développement web/mobile</div>
+          <div class="info-item">Travail en equipe</div>
+          <div class="info-item">Open source</div>
+          <div class="info-item">Sport</div>
+          <div class="info-item">Photographie</div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <div class="content-header">
+          <h2>À Propos</h2>
+          <p class="about-text">
+            Jeune diplômé en Sciences Informatiques, passionné et déterminé,
+            avec une forte motivation pour le développement logiciel et les
+            nouvelles technologies. Doté d'un excellent esprit d'équipe et d'une
+            capacité d'adaptation rapide, je suis constamment à la recherche de
+            nouveaux défis pour perfectionner mes compétences. Mon parcours
+            académique solide, combiné à mes expériences pratiques en
+            entreprise, m'a permis de développer une expertise technique
+            diversifiée et une approche rigoureuse dans la résolution de
+            problèmes complexes. Actuellement en Master Recherche en Data
+            Science, je cherche à contribuer activement au sein d'une équipe
+            dynamique tout en continuant à évoluer professionnellement.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Expérience Professionnelle</h3>
+
+          <div class="experience-item">
+            <div class="item-header">
+              <div class="item-title">Stagiaire Développeur</div>
+              <div class="item-date">2025</div>
+            </div>
+            <div class="item-subtitle">Poulina Group • Ezzahra, Tunisie</div>
+            <div class="item-description">
+              <ul>
+                <li>
+                  Conception et développement d'une application de certification
+                  sanitaire pour le bloc informatique
+                </li>
+                <li>
+                  Participation à l'analyse des besoins et à la modélisation des
+                  processus métier
+                </li>
+                <li>
+                  Mise en place d'une solution complète incluant base de données
+                  et interface utilisateur
+                </li>
+                <li>
+                  Collaboration avec l'équipe technique pour garantir la qualité
+                  et la performance de l'application
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="item-header">
+              <div class="item-title">Stagiaire Développeur</div>
+              <div class="item-date">2024</div>
+            </div>
+            <div class="item-subtitle">Sympathique Boîte • Lac, Tunisie</div>
+            <div class="item-description">
+              <ul>
+                <li>
+                  Réalisation complète d'une application de gestion de stock
+                  avec interface moderne et intuitive
+                </li>
+                <li>
+                  Développement des fonctionnalités CRUD (Create, Read, Update,
+                  Delete) pour la gestion des produits
+                </li>
+                <li>
+                  Implémentation d'un système de suivi des mouvements de stock
+                  en temps réel
+                </li>
+                <li>
+                  Rédaction de la documentation technique et formation des
+                  utilisateurs finaux
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Formation</h3>
+
+          <div class="education-item">
+            <div class="item-header">
+              <div class="item-title">Master Recherche en Data Science</div>
+              <div class="item-date">2025 - En cours</div>
+            </div>
+            <div class="item-subtitle">
+              Institut Supérieur d'Informatique (ISI) • Kef, Tunisie
+            </div>
+            <div class="item-description">
+              Formation avancée en science des données, intelligence
+              artificielle, machine learning et analyse statistique.
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="item-header">
+              <div class="item-title">Licence en Sciences Informatiques</div>
+              <div class="item-date">2022 - 2025</div>
+            </div>
+            <div class="item-subtitle">
+              Institut Supérieur d'Informatique (ISI) • Kef, Tunisie
+            </div>
+            <div class="item-description">
+              Spécialisation : Génie Logiciel<br />
+              Formation approfondie en développement logiciel, programmation
+              orientée objet, bases de données, réseaux, algorithmique et
+              gestion de projets informatiques.
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="item-header">
+              <div class="item-title">Baccalauréat Sciences</div>
+              <div class="item-date">2022</div>
+            </div>
+            <div class="item-subtitle">
+              Lycée Cité Essalem • Boumhal, Tunisie
+            </div>
+            <div class="item-description">
+              Section Sciences avec mention, spécialisation en sciences exactes.
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Animation des barres de compétences au chargement
+      window.addEventListener("load", () => {
+        const skillBars = document.querySelectorAll(".skill-progress");
+        skillBars.forEach((bar, index) => {
+          const width = bar.style.width;
+          bar.style.width = "0";
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 100 * index);
+        });
+      });
+
+      // Fonction pour imprimer en PDF (utilise la fonction d'impression du navigateur)
+      function printToPDF() {
+        window.print();
+      }
+    </script>
+  </body>
 </html>
